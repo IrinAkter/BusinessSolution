@@ -1,0 +1,92 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+
+    <body>
+
+        <ui:composition template="./../template/template2.xhtml">
+
+            <ui:define name="title">
+                Attendance Form Insert
+            </ui:define>
+
+            <ui:define name="left">
+                <f:facet name="head">
+                    <h:outputStylesheet name="./css/bootstrap.min.css"/>
+                    <h:outputStylesheet name="./css/formStyle.css"/>
+                    <h:outputStylesheet name="./css/leftmenubar.css"/>
+                    <h:outputStylesheet library="awesome" name="./css/font-awesome.css"/>
+                </f:facet>                
+                 <div class="row">
+                    <div class="col-sm-2">
+                        <nav class="nav-sidebar">
+                            <ul class="nav">
+                                <li class="active"><a href="showAttendance.xhtml"><i class="glyphicon glyphicon-home"></i>  Home</a></li>
+                                <li><a href="insertAddress.xhtml"><i class="glyphicon glyphicon-plus-sign"></i>  New Add</a></li>
+                                <li><a href="updateAttendance.xhtml"><i class="glyphicon glyphicon-refresh"></i>  Update</a></li>
+                                <li><a href="deleteAttendance.xhtml"><i class="glyphicon glyphicon-remove"></i>  Delete</a></li>
+                                <li class="nav-divider"></li>
+                                <li><a href="showAttendance.xhtml"><i class="glyphicon glyphicon-list-alt"></i>  Show Data</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </ui:define>
+
+            <ui:define name="content">
+                <center>
+                    <h:form>
+                        <p:growl id="growl" life="20000"/>
+                        <br/>
+                        <br/>
+                        <br/>
+                        <p:outputLabel for="date1" value="Date"/>
+                        <p:calendar id="date1" value="#{atn.date}" locale="de" navigator="true" pattern="yyyy-MM-dd"/>
+                        <br/>
+                        <br/>
+                        <table>
+
+                            <tr>
+                                <td>Attendance Id</td>
+                                <td>Employee Id</td>
+                                <td>Employee Name</td>
+                                <td>Status</td>
+                                <!--<td> <p:calendar id="date1" value="#{atn.date}" locale="de" navigator="true" pattern="yyyy-MM-dd"/></td>-->
+
+                            </tr>
+                            <c:set var="dm" value="0"/>
+                            <c:forEach var="emp" items="#{atn.attendanceallList}">
+                                <tr>
+                                    <td><input type="text" id="present" value="#{emp.AId}" placeholder="Attendance Id" immediate="false" rendered="true"/></td>
+                                    <td><input type="text" id="present" value="#{emp.employee.empId}" placeholder="Employee Id" immediate="false" rendered="true"/></td>
+                                    <td><input type="text" id="present" value="#{emp.empName}" placeholder="Employee name" immediate="false" rendered="true"/></td>
+                                    <td>
+                                        <h:selectOneMenu id="status" value="#{atn.sts[dm]}">
+                                            <f:selectItem itemLabel="Present" itemValue="Present" />
+                                            <f:selectItem itemLabel="Absent" itemValue="Absent" />
+                                            <f:selectItem itemLabel="Late" itemValue="Late" />
+                                        </h:selectOneMenu>
+                                    </td>                                
+
+                                </tr>
+                                
+                                <c:set var="dm" value="${dm+1}"/>
+                                </c:forEach>
+                        </table>
+                        <br/>
+                        <p:commandButton id="insert1" value="Update" actionListener="#{atn.doUpdateAttendance()}" ajax="false" styleClass="btn btn-primary" update="growl"/>
+
+
+                    </h:form>
+                </center>
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

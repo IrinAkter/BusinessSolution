@@ -21,7 +21,7 @@ public class DB {
             Class.forName("com.mysql.jdbc.Driver");
             String url="jdbc:mysql://localhost:3306/marketingmanagement";
             String user="root";
-            String password="farid";
+            String password="apcl123456";
             Connection con=DriverManager.getConnection(url, user, password);
             return con;
         } catch (ClassNotFoundException ex) {

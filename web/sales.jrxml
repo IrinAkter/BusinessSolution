@@ -70,8 +70,8 @@ FROM
 				</textField>
 			</frame>
 			<image>
-				<reportElement x="660" y="3" width="142" height="99" uuid="320fc3bb-1602-4591-b015-a27ea2e79560"/>
-				<imageExpression><![CDATA["C:\\Users\\Java Programmer\\Documents\\NetBeansProjects\\Project\\BusinessSolution\\web\\resources\\css\\img\\logo.png"]]></imageExpression>
+				<reportElement x="628" y="0" width="174" height="102" uuid="524ffb7d-9f4b-4d31-8592-5c5071a582c7"/>
+				<imageExpression><![CDATA["C:\\Users\\apcl\\Documents\\NetBeansProjects\\Project\\BusinessSolution\\web\\resources\\css\\img\\logo.png"]]></imageExpression>
 			</image>
 		</band>
 	</title>

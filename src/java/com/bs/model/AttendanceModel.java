@@ -6,6 +6,7 @@
 package com.bs.model;
 import com.bs.pojo.Attendance;
 import com.bs.pojo.Employee;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -17,5 +18,5 @@ public interface AttendanceModel {
     public boolean doUpdateAttendance(Attendance attendance);
     public boolean doDeleteAttendance(Attendance attendance);
     public List<Attendance> findAllAttendance();
-    public List<Attendance> findByAttendanceId(int AId);
+    public List<Attendance> findByAttendanceId(Date date);
 }

@@ -51,8 +51,8 @@ FROM
 				<text><![CDATA[Sr]]></text>
 			</staticText>
 			<image>
-				<reportElement x="2" y="0" width="118" height="103" uuid="d6b00c64-5acf-4781-a7e7-6175fd653e05"/>
-				<imageExpression><![CDATA["C:\\Users\\Java Programmer\\Documents\\NetBeansProjects\\Project\\BusinessSolution\\web\\resources\\css\\img\\logo.png"]]></imageExpression>
+				<reportElement x="4" y="6" width="116" height="126" uuid="9715979c-86ea-4b0d-a533-c6415e1073ac"/>
+				<imageExpression><![CDATA["C:\\Users\\apcl\\Documents\\NetBeansProjects\\Project\\BusinessSolution\\web\\resources\\css\\img\\logo.png"]]></imageExpression>
 			</image>
 		</band>
 	</title>
@@ -152,8 +152,8 @@ FROM
 				<reportElement positionType="FixRelativeToBottom" x="4" y="117" width="551" height="1" uuid="ca001cc7-6699-4be4-8dba-bc0c1d7bfdce"/>
 			</line>
 			<image>
-				<reportElement x="2" y="0" width="77" height="98" uuid="592a8bfe-1893-4363-857a-8d1e4b7f73f4"/>
-				<imageExpression><![CDATA["C:\\Users\\Java Programmer\\Documents\\NetBeansProjects\\Project\\BusinessSolution\\web\\resources\\css\\img\\logo.png"]]></imageExpression>
+				<reportElement x="2" y="0" width="77" height="50" uuid="c6773759-27c7-44fc-b71f-be1e02f78500"/>
+				<imageExpression><![CDATA["C:\\Users\\apcl\\Documents\\NetBeansProjects\\Project\\BusinessSolution\\web\\resources\\css\\img\\logo.png"]]></imageExpression>
 			</image>
 		</band>
 	</detail>

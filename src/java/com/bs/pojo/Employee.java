@@ -1,5 +1,5 @@
 package com.bs.pojo;
-// Generated Sep 4, 2016 8:27:06 PM by Hibernate Tools 4.3.1
+// Generated Oct 18, 2016 6:42:00 PM by Hibernate Tools 4.3.1
 
 
 import java.util.Date;
@@ -13,45 +13,57 @@ public class Employee  implements java.io.Serializable {
 
 
      private Integer empId;
+     private Department department;
+     private Jobs jobs;
+     private Manager manager;
      private String empName;
      private String eamil;
      private String mobile;
      private String desgination;
      private Date hireDate;
+     private Double salary;
+     private Double commissionPct;
      private Set drivers = new HashSet(0);
+     private Set managers = new HashSet(0);
+     private Set attendances = new HashSet(0);
+     private Set BManagers = new HashSet(0);
+     private Set ctrlAccesses = new HashSet(0);
+     private Jobhistory jobhistory;
+     private Set salaries = new HashSet(0);
      private Set addresses = new HashSet(0);
      private Set saleses = new HashSet(0);
-     private Set managers = new HashSet(0);
      private Set suppliers = new HashSet(0);
      private Set logins = new HashSet(0);
      private Set suppervisors = new HashSet(0);
-     private Set attendances = new HashSet(0);
-     private Set BManagers = new HashSet(0);
      private Set locations = new HashSet(0);
-     private Set ctrlAccesses = new HashSet(0);
-     private Set salaries = new HashSet(0);
 
     public Employee() {
     }
 
-    public Employee(String empName, String eamil, String mobile, String desgination, Date hireDate, Set drivers, Set addresses, Set saleses, Set managers, Set suppliers, Set logins, Set suppervisors, Set attendances, Set BManagers, Set locations, Set ctrlAccesses, Set salaries) {
+    public Employee(Department department, Jobs jobs, Manager manager, String empName, String eamil, String mobile, String desgination, Date hireDate, Double salary, Double commissionPct, Set drivers, Set managers, Set attendances, Set BManagers, Set ctrlAccesses, Jobhistory jobhistory, Set salaries, Set addresses, Set saleses, Set suppliers, Set logins, Set suppervisors, Set locations) {
+       this.department = department;
+       this.jobs = jobs;
+       this.manager = manager;
        this.empName = empName;
        this.eamil = eamil;
        this.mobile = mobile;
        this.desgination = desgination;
        this.hireDate = hireDate;
+       this.salary = salary;
+       this.commissionPct = commissionPct;
        this.drivers = drivers;
+       this.managers = managers;
+       this.attendances = attendances;
+       this.BManagers = BManagers;
+       this.ctrlAccesses = ctrlAccesses;
+       this.jobhistory = jobhistory;
+       this.salaries = salaries;
        this.addresses = addresses;
        this.saleses = saleses;
-       this.managers = managers;
        this.suppliers = suppliers;
        this.logins = logins;
        this.suppervisors = suppervisors;
-       this.attendances = attendances;
-       this.BManagers = BManagers;
        this.locations = locations;
-       this.ctrlAccesses = ctrlAccesses;
-       this.salaries = salaries;
     }
    
     public Integer getEmpId() {
@@ -60,6 +72,27 @@ public class Employee  implements java.io.Serializable {
     
     public void setEmpId(Integer empId) {
         this.empId = empId;
+    }
+    public Department getDepartment() {
+        return this.department;
+    }
+    
+    public void setDepartment(Department department) {
+        this.department = department;
+    }
+    public Jobs getJobs() {
+        return this.jobs;
+    }
+    
+    public void setJobs(Jobs jobs) {
+        this.jobs = jobs;
+    }
+    public Manager getManager() {
+        return this.manager;
+    }
+    
+    public void setManager(Manager manager) {
+        this.manager = manager;
     }
     public String getEmpName() {
         return this.empName;
@@ -96,12 +129,68 @@ public class Employee  implements java.io.Serializable {
     public void setHireDate(Date hireDate) {
         this.hireDate = hireDate;
     }
+    public Double getSalary() {
+        return this.salary;
+    }
+    
+    public void setSalary(Double salary) {
+        this.salary = salary;
+    }
+    public Double getCommissionPct() {
+        return this.commissionPct;
+    }
+    
+    public void setCommissionPct(Double commissionPct) {
+        this.commissionPct = commissionPct;
+    }
     public Set getDrivers() {
         return this.drivers;
     }
     
     public void setDrivers(Set drivers) {
         this.drivers = drivers;
+    }
+    public Set getManagers() {
+        return this.managers;
+    }
+    
+    public void setManagers(Set managers) {
+        this.managers = managers;
+    }
+    public Set getAttendances() {
+        return this.attendances;
+    }
+    
+    public void setAttendances(Set attendances) {
+        this.attendances = attendances;
+    }
+    public Set getBManagers() {
+        return this.BManagers;
+    }
+    
+    public void setBManagers(Set BManagers) {
+        this.BManagers = BManagers;
+    }
+    public Set getCtrlAccesses() {
+        return this.ctrlAccesses;
+    }
+    
+    public void setCtrlAccesses(Set ctrlAccesses) {
+        this.ctrlAccesses = ctrlAccesses;
+    }
+    public Jobhistory getJobhistory() {
+        return this.jobhistory;
+    }
+    
+    public void setJobhistory(Jobhistory jobhistory) {
+        this.jobhistory = jobhistory;
+    }
+    public Set getSalaries() {
+        return this.salaries;
+    }
+    
+    public void setSalaries(Set salaries) {
+        this.salaries = salaries;
     }
     public Set getAddresses() {
         return this.addresses;
@@ -116,13 +205,6 @@ public class Employee  implements java.io.Serializable {
     
     public void setSaleses(Set saleses) {
         this.saleses = saleses;
-    }
-    public Set getManagers() {
-        return this.managers;
-    }
-    
-    public void setManagers(Set managers) {
-        this.managers = managers;
     }
     public Set getSuppliers() {
         return this.suppliers;
@@ -145,40 +227,12 @@ public class Employee  implements java.io.Serializable {
     public void setSuppervisors(Set suppervisors) {
         this.suppervisors = suppervisors;
     }
-    public Set getAttendances() {
-        return this.attendances;
-    }
-    
-    public void setAttendances(Set attendances) {
-        this.attendances = attendances;
-    }
-    public Set getBManagers() {
-        return this.BManagers;
-    }
-    
-    public void setBManagers(Set BManagers) {
-        this.BManagers = BManagers;
-    }
     public Set getLocations() {
         return this.locations;
     }
     
     public void setLocations(Set locations) {
         this.locations = locations;
-    }
-    public Set getCtrlAccesses() {
-        return this.ctrlAccesses;
-    }
-    
-    public void setCtrlAccesses(Set ctrlAccesses) {
-        this.ctrlAccesses = ctrlAccesses;
-    }
-    public Set getSalaries() {
-        return this.salaries;
-    }
-    
-    public void setSalaries(Set salaries) {
-        this.salaries = salaries;
     }
 
 

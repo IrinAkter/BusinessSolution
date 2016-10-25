@@ -10,6 +10,7 @@ import com.bs.pojo.Attendance;
 import com.bs.pojo.Employee;
 import com.bs.pojo.Manager;
 import com.bs.util.HibernateUtil;
+import java.util.Date;
 import java.util.List;
 import org.hibernate.Query;
 import org.hibernate.Session;
@@ -119,11 +120,11 @@ public class AttendanceDao implements AttendanceModel {
     }
 
     @Override
-    public List<Attendance> findByAttendanceId(int AId) {
+    public List<Attendance> findByAttendanceId(Date date) {
         Session s = HibernateUtil.getSessionFactory().openSession();
         try {
             s.beginTransaction();
-            Query q = s.createQuery("From Attendance where AId=" + AId + "");
+            Query q = s.createQuery("From Attendance where date=" + date + "");
             List<Attendance> aList = q.list();
             s.getTransaction().commit();
             return aList;

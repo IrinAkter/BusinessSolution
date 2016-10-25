@@ -57,8 +57,8 @@ FROM
 				</textField>
 			</frame>
 			<image>
-				<reportElement x="409" y="0" width="144" height="128" uuid="19d4b779-4c81-4307-9e4f-f72a57413835"/>
-				<imageExpression><![CDATA["C:\\Users\\Java Programmer\\Documents\\NetBeansProjects\\Project\\BusinessSolution\\web\\resources\\css\\img\\logo.png"]]></imageExpression>
+				<reportElement x="409" y="0" width="144" height="132" uuid="6d567547-cdef-4fbb-828e-213512b5689e"/>
+				<imageExpression><![CDATA["C:\\Users\\apcl\\Documents\\NetBeansProjects\\Project\\BusinessSolution\\web\\resources\\css\\img\\logo.png"]]></imageExpression>
 			</image>
 		</band>
 	</title>

@@ -1,5 +1,5 @@
 package com.bs.pojo;
-// Generated Sep 4, 2016 8:27:06 PM by Hibernate Tools 4.3.1
+// Generated Oct 18, 2016 6:42:00 PM by Hibernate Tools 4.3.1
 
 
 import java.util.HashSet;
@@ -13,8 +13,10 @@ public class Location  implements java.io.Serializable {
 
      private Integer locId;
      private Employee employee;
+     private Regions regions;
      private String locName;
      private Set suppervisors = new HashSet(0);
+     private Set departments = new HashSet(0);
      private Set srs = new HashSet(0);
      private Set BManagers = new HashSet(0);
      private Set drivers = new HashSet(0);
@@ -23,10 +25,12 @@ public class Location  implements java.io.Serializable {
     public Location() {
     }
 
-    public Location(Employee employee, String locName, Set suppervisors, Set srs, Set BManagers, Set drivers, Set suppliers) {
+    public Location(Employee employee, Regions regions, String locName, Set suppervisors, Set departments, Set srs, Set BManagers, Set drivers, Set suppliers) {
        this.employee = employee;
+       this.regions = regions;
        this.locName = locName;
        this.suppervisors = suppervisors;
+       this.departments = departments;
        this.srs = srs;
        this.BManagers = BManagers;
        this.drivers = drivers;
@@ -47,6 +51,13 @@ public class Location  implements java.io.Serializable {
     public void setEmployee(Employee employee) {
         this.employee = employee;
     }
+    public Regions getRegions() {
+        return this.regions;
+    }
+    
+    public void setRegions(Regions regions) {
+        this.regions = regions;
+    }
     public String getLocName() {
         return this.locName;
     }
@@ -60,6 +71,13 @@ public class Location  implements java.io.Serializable {
     
     public void setSuppervisors(Set suppervisors) {
         this.suppervisors = suppervisors;
+    }
+    public Set getDepartments() {
+        return this.departments;
+    }
+    
+    public void setDepartments(Set departments) {
+        this.departments = departments;
     }
     public Set getSrs() {
         return this.srs;

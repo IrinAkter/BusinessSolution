@@ -51,7 +51,11 @@
                             <p:inputText id="name" value="#{lo.location.locName}" placeholder="Location name" immediate="false" rendered="true" validatorMessage="Name is Invalid">
                                 <f:validateRegex pattern="[a-zA-Z]+[.]?+[ ]?[A-Za-z]+"/>
                             </p:inputText>
-
+                            <p:outputLabel for="rid" value="Regions Id"/>
+                            <p:selectOneMenu id="rid" value="#{lo.regions.regionsId}" effect="fold" editable="true"  style="width: 185px">
+                            <f:selectItem itemLabel="Select Regions Id" itemValue="" noSelectionOption="true"/>
+                            <f:selectItems value="#{lo.regionsAllList}"/>
+                            </p:selectOneMenu>
                             <p:outputLabel for="insert1" />
                             <p:commandButton id="insert1" value="Submit" action="#{lo.doInsertLocation()}" ajax="false" styleClass="btn btn-primary" update="growl"/>
                         </p:panelGrid>

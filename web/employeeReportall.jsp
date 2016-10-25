@@ -32,7 +32,7 @@
                 Connection conn = null;
 
                 Class.forName("com.mysql.jdbc.Driver");
-                conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/marketingmanagement", "root", "farid");
+                conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/marketingmanagement", "root", "apcl123456");
 
                 String s = session.getServletContext().getRealPath("/employee3.jrxml");
                 InputStream inputStream = new FileInputStream(new File(s));

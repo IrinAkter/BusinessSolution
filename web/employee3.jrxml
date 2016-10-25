@@ -58,8 +58,8 @@ FROM
 				<text><![CDATA[All Employee]]></text>
 			</staticText>
 			<image>
-				<reportElement x="1" y="0" width="171" height="136" uuid="2985b56e-7305-47a3-b48d-8ffbf1f759e6"/>
-				<imageExpression><![CDATA["C:\\Users\\Java Programmer\\Documents\\NetBeansProjects\\Project\\BusinessSolution\\web\\resources\\css\\img\\logo.png"]]></imageExpression>
+				<reportElement x="1" y="0" width="173" height="136" uuid="9c144798-8227-4041-b753-bb1249ed39a1"/>
+				<imageExpression><![CDATA["C:\\Users\\apcl\\Documents\\NetBeansProjects\\Project\\BusinessSolution\\web\\resources\\css\\img\\logo.png"]]></imageExpression>
 			</image>
 		</band>
 	</title>

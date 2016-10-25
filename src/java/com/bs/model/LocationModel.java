@@ -17,5 +17,7 @@ public interface LocationModel {
     public boolean doUpdateLocation(Location location);
     public boolean doDeleteLocation(Location location);
     public List<Location> findAllLocation();
+    public List<Integer> findAllRegionsId();
     public List<Location> findByLocationId(int locId);
+    public Location allLocation();
 }

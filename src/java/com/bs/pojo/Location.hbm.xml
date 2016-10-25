@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated Sep 4, 2016 8:27:07 PM by Hibernate Tools 4.3.1 -->
+<!-- Generated Oct 18, 2016 6:42:02 PM by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
     <class name="com.bs.pojo.Location" table="location" catalog="marketingmanagement" optimistic-lock="version">
         <id name="locId" type="java.lang.Integer">
@@ -11,6 +11,9 @@
         <many-to-one name="employee" class="com.bs.pojo.Employee" fetch="select">
             <column name="Emp_Id" />
         </many-to-one>
+        <many-to-one name="regions" class="com.bs.pojo.Regions" fetch="select">
+            <column name="regions_id" />
+        </many-to-one>
         <property name="locName" type="string">
             <column name="Loc_Name" length="45" />
         </property>
@@ -19,6 +22,12 @@
                 <column name="Loc_Id" />
             </key>
             <one-to-many class="com.bs.pojo.Suppervisor" />
+        </set>
+        <set name="departments" table="department" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="location_id" />
+            </key>
+            <one-to-many class="com.bs.pojo.Department" />
         </set>
         <set name="srs" table="sr" inverse="true" lazy="true" fetch="select">
             <key>

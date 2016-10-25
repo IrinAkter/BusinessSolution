@@ -1,0 +1,75 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+
+    <body>
+
+        <ui:composition template="./../template/template2.xhtml">
+
+            <ui:define name="title">
+                Insert Department || BS
+            </ui:define>
+
+            <ui:define name="left">
+                <f:facet name="head">
+                    <h:outputStylesheet name="./css/bootstrap.min.css"/>
+                    <h:outputStylesheet name="./css/formStyle.css"/>
+                    <h:outputStylesheet name="./css/leftmenubar.css"/>
+                    <h:outputStylesheet library="awesome" name="./css/font-awesome.css"/>
+                </f:facet>                
+               <div class="row">
+                    <div class="col-sm-2">
+                        <nav class="nav-sidebar">
+                            <ul class="nav">
+                                <li class="active"><a href="department.xhtml"><i class="glyphicon glyphicon-home"></i>  Home</a></li>
+                                <li><a href="insertDepartment.xhtml"><i class="glyphicon glyphicon-plus-sign"></i>  New Add</a></li>
+                                <li><a href="updateDepartment.xhtml"><i class="glyphicon glyphicon-refresh"></i>  Update</a></li>
+                                <li><a href="deleteDepartment.xhtml"><i class="glyphicon glyphicon-remove"></i>  Delete</a></li>
+                                <li class="nav-divider"></li>
+                                <li><a href="showDepartment.xhtml"><i class="glyphicon glyphicon-list-alt"></i>  Show Data</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </ui:define>
+
+            <ui:define name="content">
+                <br/>
+                <br/>
+                <br/>
+                <center>
+                <h:form>
+                    <p:growl id="growl" life="20000"/>
+                    <p:panelGrid columns="2">
+                        <p:outputLabel for="did" value="Department Id"/>
+                        <p:inputText id="did" value="#{d.department.departmentId}" placeholder="Department Id" immediate="false" rendered="true"/>
+                        <p:outputLabel for="dname" value="Department Name"/>
+                        <p:inputText id="dname" value="#{d.department.departmentName}" placeholder="Department Name" immediate="false" rendered="true"/>
+                        <p:outputLabel for="mid" value="Manager Id"/>
+                        <p:selectOneMenu id="mid" value="#{d.manager.MId}" effect="fold" editable="true"  style="width: 185px">
+                            <f:selectItem itemLabel="Select Manager Id" itemValue="Select Manager Id" />
+                            <f:selectItems value="#{d.allManagerId}"/>
+                        </p:selectOneMenu> 
+                        <p:outputLabel for="locid" value="Location Id"/>
+                        <p:selectOneMenu id="locid" value="#{d.location.locId}" effect="fold" editable="true"  style="width: 185px">
+                            <f:selectItem itemLabel="Select Location Id" itemValue="Select Location Id" />
+                            <f:selectItems value="#{d.allLocationId}"/>
+                        </p:selectOneMenu> 
+                        <p:outputLabel for="insert1" />
+                        <p:commandButton id="insert1" value="Save" action="#{d.doInsertDepartment()}" ajax="false" styleClass="btn btn-primary" update="growl"/>
+                    </p:panelGrid>
+                </h:form>
+                </center>
+                    <br/>
+                    <br/>
+                    <br/>
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

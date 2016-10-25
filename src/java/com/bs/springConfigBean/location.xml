@@ -18,7 +18,7 @@
 ">
 
     <bean id="location" class="com.bs.pojo.Location"/>
-    
+    <bean id="regions" class="com.bs.pojo.Regions"/>
     <bean id="locationdao" class="com.bs.dao.LocationDao"/>
     <bean id="employee" class="com.bs.pojo.Employee"/>
 </beans>

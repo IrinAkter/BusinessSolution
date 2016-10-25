@@ -528,6 +528,9 @@
                 <config-file>web/WEB-INF/Dispatcher-servlet.xml</config-file>
                 <config-file>src/java/com/bs/springConfigBean/product.xml</config-file>
                 <config-file>src/java/com/bs/springConfigBean/employee.xml</config-file>
+                <config-file>src/java/com/bs/springConfigBean/regions.xml</config-file>
+                <config-file>src/java/com/bs/springConfigBean/department.xml</config-file>
+                <config-file>src/java/com/bs/springConfigBean/jobhistory.xml</config-file>
             </config-files>
             <config-file-groups>
                 <config-file-group name="Default Group">

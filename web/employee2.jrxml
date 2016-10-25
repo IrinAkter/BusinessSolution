@@ -63,10 +63,6 @@ where  employee.`Emp_Id`=$P{Emp_Id} ||  employee.`Emp_Name`=$P{Emp_Name} ||  add
 				</textElement>
 				<text><![CDATA[Employee Report]]></text>
 			</staticText>
-			<image>
-				<reportElement x="0" y="0" width="172" height="136" uuid="1d3b9680-5e5c-4dbf-8bb9-f87ade54dca4"/>
-				<imageExpression><![CDATA["C:\\Users\\Java Programmer\\Documents\\NetBeansProjects\\Project\\BusinessSolution\\web\\resources\\css\\img\\logo.png"]]></imageExpression>
-			</image>
 			<textField pattern="EEEEE dd MMMMM yyyy">
 				<reportElement style="Column header" x="629" y="0" width="173" height="20" forecolor="#736343" uuid="e988c2a5-7424-4a9a-8849-90d7d923d83a"/>
 				<textElement verticalAlignment="Middle">
@@ -74,6 +70,10 @@ where  employee.`Emp_Id`=$P{Emp_Id} ||  employee.`Emp_Name`=$P{Emp_Name} ||  add
 				</textElement>
 				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
 			</textField>
+			<image>
+				<reportElement x="0" y="0" width="198" height="136" uuid="3affa56e-8054-4fa7-a191-2bc8cb1b9c61"/>
+				<imageExpression><![CDATA["C:\\Users\\apcl\\Documents\\NetBeansProjects\\Project\\BusinessSolution\\web\\resources\\css\\img\\logo.png"]]></imageExpression>
+			</image>
 		</band>
 	</title>
 	<pageHeader>

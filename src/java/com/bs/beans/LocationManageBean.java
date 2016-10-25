@@ -8,6 +8,7 @@ package com.bs.beans;
 import com.bs.dao.LocationDao;
 import com.bs.pojo.Employee;
 import com.bs.pojo.Location;
+import com.bs.pojo.Regions;
 import java.util.ArrayList;
 import java.util.List;
 import javax.faces.application.FacesMessage;
@@ -32,14 +33,17 @@ public class LocationManageBean {
 	
     private Location location = (Location) ctx.getBean("location");
     private Employee employee = (Employee) ctx.getBean("employee");
+    private Regions regions = (Regions) ctx.getBean("regions");
     LocationDao locationDao = (LocationDao) ctx.getBean("locationdao");
 
     private List<Location> locationListById = new ArrayList<>();
     private List<Location> locationAllList=new ArrayList<>();
+    private List<Integer> regionsAllList=new ArrayList<>();
 
 
     public LocationManageBean() {
         doViewAllLocation();
+        allRegionsId();
     }
 
     @Autowired
@@ -78,6 +82,13 @@ public class LocationManageBean {
     @Autowired
     public void doViewAllLocation() {
         locationAllList = locationDao.findAllLocation();
+        location=locationDao.allLocation();
+        employee=location.getEmployee();
+        regions=location.getRegions();
+    }
+    @Autowired
+    public void allRegionsId() {
+        regionsAllList = locationDao.findAllRegionsId();
 
     }
 
@@ -86,6 +97,8 @@ public class LocationManageBean {
         locationListById = locationDao.findByLocationId(location.getLocId());
         for (Location lo : locationListById) {
             location.setLocName(lo.getLocName());
+            location.setEmployee(lo.getEmployee());
+            location.setRegions(lo.getRegions());
         }
 
     }
@@ -119,6 +132,30 @@ public class LocationManageBean {
 
     public void setEmployee(Employee employee) {
         this.employee = employee;
+    }
+
+    public List<Location> getLocationListById() {
+        return locationListById;
+    }
+
+    public void setLocationListById(List<Location> locationListById) {
+        this.locationListById = locationListById;
+    }
+
+    public List<Integer> getRegionsAllList() {
+        return regionsAllList;
+    }
+
+    public void setRegionsAllList(List<Integer> regionsAllList) {
+        this.regionsAllList = regionsAllList;
+    }
+
+    public Regions getRegions() {
+        return regions;
+    }
+
+    public void setRegions(Regions regions) {
+        this.regions = regions;
     }
 
 }

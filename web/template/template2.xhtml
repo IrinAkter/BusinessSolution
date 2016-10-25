@@ -25,20 +25,13 @@
                         <p:growl id="messages"/>
 
                         <p:menubar style="padding-left: 25%;">
-                            <p:menuitem class="dashboard" value="Dashboard" url="http://localhost:8084/BusinessSolution/faces/login.xhtml" icon=" fa fa-home" />
-                            <p:submenu label="File" icon="fa fa-th-list">
-                                <p:submenu label="New" icon="ui-icon-contact">
-                                    <p:menuitem value="Project" url="#" />
-                                    <p:menuitem value="Other" url="#" />
-                                </p:submenu>
-                                <p:menuitem value="Open" url="#" />
-                                <p:separator />
-                                <p:menuitem value="Quit" url="#" />
-                            </p:submenu>
-
-                            <p:submenu label="Edit"  icon="fa fa-th-list">
-                                <p:menuitem value="Undo" url="#" icon="ui-icon-arrowreturnthick-1-w" />
-                                <p:menuitem value="Redo" url="#" icon="ui-icon-arrowreturnthick-1-e" />
+                            <p:menuitem class="dashboard" value="Dashboard" url="http://localhost:8084/BusinessSolution/faces/dataentry/dataentry.xhtml" icon=" fa fa-home" />
+                            <p:submenu label="Reports"  icon="fa fa-th-list">
+                                <p:menuitem value="Employee" url="../employee.jsp" icon="ui-icon-arrowreturnthick-1-w" />
+                                <p:menuitem value="Customer" url="../customer_R.jsp" icon="ui-icon-arrowreturnthick-1-e" />
+                                <p:menuitem value="Product" url="../product_R.jsp" icon="ui-icon-arrowreturnthick-1-e" />
+                                <p:menuitem value="Purchases" url="../purchases_R.jsp" icon="ui-icon-arrowreturnthick-1-e" />
+                                <p:menuitem value="Salary" url="../salar_R.jsp" icon="ui-icon-arrowreturnthick-1-e" />
                             </p:submenu>
 
                             <p:submenu label="Help"  icon="fa fa-th-list">
@@ -71,7 +64,7 @@
                                 <p:menuitem value="Location" url="../dataentry/location.xhtml"  />
                                 <p:menuitem value="Product" url="../dataentry/product.xhtml"  />
                                 <p:menuitem value="Salary" url="../dataentry/salary.xhtml"  />
-                                
+
                             </p:submenu>
 
                             <f:facet name="options">                               

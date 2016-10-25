@@ -105,6 +105,42 @@ public class LocationDao implements LocationModel{
         }
     }
 
+    @Override
+    public List<Integer> findAllRegionsId() {
+         Session s = HibernateUtil.getSessionFactory().openSession();
+        try {
+            s.beginTransaction();
+            Query q = s.createQuery("Select regionsId From Regions");
+            List<Integer> rList = q.list();
+            s.getTransaction().commit();
+            return rList;
+        } catch (Exception e) {
+            return null;
+
+        } finally {
+            s.close();
+        }
+    }
+
+    @Override
+    public Location allLocation() {
+        Session s = HibernateUtil.getSessionFactory().openSession();
+        try {
+            Location loc=new Location();
+            s.beginTransaction();
+            Query q = s.createQuery("From Location");
+            List<Location> pList = q.list();
+               loc=pList.get(0);
+            s.getTransaction().commit();
+            return loc;
+        } catch (Exception e) {
+            return null;
+
+        } finally {
+            s.close();
+        }
+    }
+
     
     }
 

@@ -1,5 +1,5 @@
 package com.bs.pojo;
-// Generated Sep 4, 2016 8:27:06 PM by Hibernate Tools 4.3.1
+// Generated Oct 18, 2016 6:42:00 PM by Hibernate Tools 4.3.1
 
 
 import java.util.HashSet;
@@ -14,15 +14,19 @@ public class Manager  implements java.io.Serializable {
      private Integer MId;
      private Employee employee;
      private String MName;
+     private Set departments = new HashSet(0);
      private Set suppervisors = new HashSet(0);
+     private Set employees = new HashSet(0);
 
     public Manager() {
     }
 
-    public Manager(Employee employee, String MName, Set suppervisors) {
+    public Manager(Employee employee, String MName, Set departments, Set suppervisors, Set employees) {
        this.employee = employee;
        this.MName = MName;
+       this.departments = departments;
        this.suppervisors = suppervisors;
+       this.employees = employees;
     }
    
     public Integer getMId() {
@@ -46,12 +50,26 @@ public class Manager  implements java.io.Serializable {
     public void setMName(String MName) {
         this.MName = MName;
     }
+    public Set getDepartments() {
+        return this.departments;
+    }
+    
+    public void setDepartments(Set departments) {
+        this.departments = departments;
+    }
     public Set getSuppervisors() {
         return this.suppervisors;
     }
     
     public void setSuppervisors(Set suppervisors) {
         this.suppervisors = suppervisors;
+    }
+    public Set getEmployees() {
+        return this.employees;
+    }
+    
+    public void setEmployees(Set employees) {
+        this.employees = employees;
     }
 
 

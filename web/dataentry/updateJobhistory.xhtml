@@ -1,0 +1,81 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+
+    <body>
+
+        <ui:composition template="./../template/template2.xhtml">
+
+            <ui:define name="title">
+                Update Job History || BS
+            </ui:define>
+
+            <ui:define name="left">
+                <f:facet name="head">
+                    <h:outputStylesheet name="./css/bootstrap.min.css"/>
+                    <h:outputStylesheet name="./css/formStyle.css"/>
+                    <h:outputStylesheet name="./css/leftmenubar.css"/>
+                    <h:outputStylesheet library="awesome" name="./css/font-awesome.css"/>
+                </f:facet>                
+               <div class="row">
+                    <div class="col-sm-2">
+                        <nav class="nav-sidebar">
+                            <ul class="nav">
+                                <li class="active"><a href="jobhistory.xhtml"><i class="glyphicon glyphicon-home"></i>  Home</a></li>
+                                <li><a href="insertJobHistory.xhtml"><i class="glyphicon glyphicon-plus-sign"></i>  New Add</a></li>
+                                <li><a href="updateJobhistory.xhtml"><i class="glyphicon glyphicon-refresh"></i>  Update</a></li>
+                                <li><a href="deleteJobHistory.xhtml"><i class="glyphicon glyphicon-remove"></i>  Delete</a></li>
+                                <li class="nav-divider"></li>
+                                <li><a href="showJobHistory.xhtml"><i class="glyphicon glyphicon-list-alt"></i>  Show Data</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </ui:define>
+
+            <ui:define name="content">
+                <br/>
+                <br/>
+                <br/>
+                <center>
+                <h:form>
+                    <p:growl id="growl" life="20000"/>
+                    <p:panelGrid columns="2">
+                        <p:outputLabel for="eid" value="Employee Id"/>
+                        <p:selectOneMenu id="eid" value="#{j.jobhistory.empId}" effect="fold" editable="true"  style="width: 185px">
+                            <f:selectItem itemLabel="Select Employee Id" itemValue="Select Employee Id" />
+                            <f:selectItems value="#{j.jobhistoryallList}" var="jh" itemLabel="#{jh.empId}" itemValue="#{jh.empId}"/>
+                            <p:ajax event="change" listener="#{j.findByJobHistoryId()}" update="std enDate mid manager"/>
+                        </p:selectOneMenu> 
+                        <p:outputLabel for="std" value="Start Date"/>
+                        <p:calendar id="std" value="#{j.jobhistory.startDate}" locale="de" navigator="true" pattern="yyyy-MM-dd"/>
+                        <p:outputLabel for="enDate" value="End Date"/>
+                        <p:calendar id="enDate" value="#{j.jobhistory.endDate}" locale="de" navigator="true" pattern="yyyy-MM-dd"/>
+                        <p:outputLabel for="mid" value="Job Id"/>
+                        <p:selectOneMenu id="mid" value="#{j.jobs.jobId}" effect="fold" editable="true"  style="width: 185px">
+                            <f:selectItem itemLabel="Select Job Id" itemValue="Select Job Id" />
+                            <f:selectItems value="#{j.allJobsId}"/>
+                        </p:selectOneMenu> 
+                        <p:outputLabel for="manager" value="Department Id"/>
+                        <p:selectOneMenu id="manager" value="#{j.department.departmentId}" effect="fold" editable="true"  style="width: 185px">
+                            <f:selectItem itemLabel="Select Location Id" itemValue="Select Location Id" />
+                            <f:selectItems value="#{j.allDeptId}"/>
+                        </p:selectOneMenu> 
+                        <p:outputLabel for="insert1" />
+                        <p:commandButton id="insert1" value="Update" action="#{j.doUpdateJobHistory()}" ajax="false" styleClass="btn btn-primary" update="growl"/>
+                    </p:panelGrid>
+                </h:form>
+                </center>
+                    <br/>
+                    <br/>
+                    <br/>
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

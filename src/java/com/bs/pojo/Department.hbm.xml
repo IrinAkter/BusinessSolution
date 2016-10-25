@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 18, 2016 6:42:02 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.bs.pojo.Department" table="department" catalog="marketingmanagement" optimistic-lock="version">
+        <id name="departmentId" type="int">
+            <column name="department_id" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="location" class="com.bs.pojo.Location" fetch="select">
+            <column name="location_id" />
+        </many-to-one>
+        <many-to-one name="manager" class="com.bs.pojo.Manager" fetch="select">
+            <column name="manager_id" />
+        </many-to-one>
+        <property name="departmentName" type="string">
+            <column name="department_name" length="45" />
+        </property>
+        <set name="jobhistories" table="jobhistory" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="department_id" />
+            </key>
+            <one-to-many class="com.bs.pojo.Jobhistory" />
+        </set>
+        <set name="employees" table="employee" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Department_Id" />
+            </key>
+            <one-to-many class="com.bs.pojo.Employee" />
+        </set>
+    </class>
+</hibernate-mapping>
